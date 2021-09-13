@@ -399,18 +399,19 @@
                         <form class="contact_form_inner" method="post" autocomplete="off" name="google-sheet">
                             <fieldset>
                                 <div class="field">
-                                    <input type="text" name="name" placeholder="Your name" />
+                                    <input type="text" name="Name" placeholder="Your name" />
                                 </div>
                                 <div class="field">
-                                    <input type="email" name="email" placeholder="Email" />
+                                    <input type="email" name="Email" placeholder="Email" />
                                 </div>
                                 <div class="field">
-                                    <input type="text" name="phone_no" placeholder="Phone number" />
+                                    <input type="text" name="Phone" placeholder="Phone number" />
                                 </div>
                                 <div class="field">
-                                    <textarea placeholder="Message"></textarea>
+                                        <input type="text" name="Message" placeholder="Your name" />
                                 </div>
                                 <div class="field center">
+					                                    
                                     <button type="submit" name="submit">SEND</button>
                                 </div>
                             </fieldset>
@@ -510,15 +511,13 @@
     <script src="js/isotope.min.js"></script>
     <script src="js/images-loded.min.js"></script>
     <script src="js/custom.js"></script>
-	    <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbwEnevGRRHASV3WyxzdcHeN3lGb6c2xquQJ_7UqGWkQqb2-mJ_YRWlGxoFqsQ9bRwM/exec'
+	           <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx2b-XHaLt8UZHM8lIUbSuWWxfz9OZ7uA3iVLxhhr31DB1Pz8JfspnVdyrEZMKW8b8x/exec'
             const form = document.forms['google-sheet']
           
             form.addEventListener('submit', e => {
               e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form), headers: {
-        'Content-Type': 'text/plain;charset=utf-8',
-    }})
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
                 .catch(error => console.error('Error!', error.message))
             })
